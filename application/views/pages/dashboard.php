@@ -30,12 +30,12 @@
                         <tr>
 
                         <?php foreach($games as $game ){?>
-                            <th><?= $game['id'] ?></th>
-                            <th><?= $game['name'] ?></th>
-                            <th><?= $game['price'] ?></th>
-                            <th><?= $game['developer'] ?></th>
-                            <th><?= $game['release_date'] ?></th>
-                            <th>xxxxxx</th>
+                            <td><?= $game['id'] ?></td>
+                            <td><?= $game['name'] ?></td>
+                            <td><?= $game['price'] ?></td>
+                            <td><?= $game['developer'] ?></td>
+                            <td><?= $game['release_date'] ?></td>
+                            <td>xxxxxx</td>
 
                         </tr>
                         <?php }?>
@@ -44,7 +44,7 @@
             </div>
 
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h2 class="h2">Last 5 Users</h2>
+                <h2 class="h2">Ultimos 5 Usuários</h2>
             </div>
 
             <div class="table-responsive">
@@ -59,7 +59,14 @@
                     </thead>
 
                     <tbody>
-                        
+                        <?php foreach($users as $user) {?>
+                            <tr>
+                            <td><?= $user['id']?></td>
+                            <td><?= $user['nome']?></td>
+                            <td><?= $user['email']?></td>
+                            <td><?= $user['pais']?></td>
+                        </tr>
+                        <?php }?>
                     </tbody>
                 </table>
             </div>

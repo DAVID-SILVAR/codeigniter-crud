@@ -52,7 +52,7 @@
                 function goDelete(id){
 
                     var URL = "Games/deletar/" + id;
-                
+
                     Swal.fire({
                     title: 'Deseja deletar este arquivo?',
                     text: "Você não podera reverter isso depois!",
@@ -61,20 +61,21 @@
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
                     cancelButtonText: 'Cancelar',
-                    confirmButtonText: 'Deletar!'
+                    confirmButtonText: 'Deletar'
                     }).then((result) => {
                     if (result.isConfirmed) {
-
+                        
                         Swal.fire(
-                        'Deletado!',
-                        'Arquivo deletado com sucesso!',
-                        'success'
-                        )
+                            'Deletado!',
+                            'Arquivo deletado com sucesso!',
+                            'success', 
+
+                            )
                         window.location.href = URL;
                     }
                     })
 
-                }
+                } 
             </script>
 
 
