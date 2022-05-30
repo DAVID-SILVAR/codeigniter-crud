@@ -53,9 +53,12 @@
             <label for="inputCountry" class="sr-only">País</label>
             <input type="text" name="pais" id="inputCountry" class="form-control" placeholder="País" required autofocus>
             
+            <br>
+
             <p>
-                <a href="">Ainda não possui uma conta?</a>
+                <a href="<?= base_url("Login")?>">Já possui uma conta?</a>
             </p>
+
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
 

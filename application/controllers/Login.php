@@ -9,6 +9,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('pages/login', $data);
         }
 
+        public function logar(){
+
+            $this->load->model('Login_model');
+
+            $email = $_POST['email'];
+            $senha = md5($_POST['senha']); 
+            
+             $user = $this->Login_model->logar($email, $senha);
+
+             if($user){
+
+                $this->session->set_userdata("logado", $user);
+                redirect("dashboard");
+             }else{
+                 redirect("login");
+             }
+
+
+
+
+        }
+
 
 
     }
