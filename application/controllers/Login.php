@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     class Login extends CI_Controller { 
 
+        public function __construct(){
+
+            parent::__construct();            
+            $this->load->model('Login_model');
+        }
+
         public function index(){
             
             $data['title'] = 'Login - CodeIgniter';
@@ -10,8 +16,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
 
         public function logar(){
-
-            $this->load->model('Login_model');
 
             $email = $_POST['email'];
             $senha = md5($_POST['senha']); 
@@ -26,9 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  redirect("login");
              }
 
+        }
 
-
-
+        public function sair(){
+            $this->session->unset_userdata("logado");
+            redirect("login");
         }
 
 
